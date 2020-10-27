@@ -21,10 +21,13 @@ public class Board {
         boxes[centerLat][centerLong] = -1;
     }
 
-    public int getPosition(int latitude, int longitude) {
-        return boxes[latitude][longitude];
-
-    }
+//    public int getPosition(int latitude, int longitude) {
+//        return boxes[latitude][longitude];
+//    }
+//
+//    public void setPostion(int latitude, int longitude) {
+//
+//    }
 
     public void printBoard() {
         System.out.print("+");
@@ -52,8 +55,16 @@ public class Board {
         return (latitude == centerLat && longitude == centerLong);
     }
 
+    public int[] startingPosition() {
+        return new int[] {centerLat, centerLong};
+    }
+
     public boolean isOutOfBounds(int latitude, int longitude) {
         return latitude > height || latitude < 0 || longitude > width || longitude < 0;
+    }
+
+    public void addCoin(int latitude, int longitude) {
+        boxes[latitude][longitude] += 1;
     }
 
 
