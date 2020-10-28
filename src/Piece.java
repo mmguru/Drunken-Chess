@@ -1,12 +1,15 @@
 
 
 public abstract class Piece {
-    public Piece(int latitude, int longitude) {
+    private int latitude, longitude;
+    Board board;
+    public Piece(Board board, int latitude, int longitude) {
+        this.board = board;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    private int latitude, longitude;
+
     public abstract void bitToMove(String bits);
     public abstract int[][] possibleMoves();
     public abstract int[][] getPosition();
@@ -26,5 +29,9 @@ public abstract class Piece {
         for (int i = 0; i < binaryString.length(); i+=2) {
             bitToMove(binaryString.substring(i, i+2));
         }
+    }
+
+    public void dropCoin(int latitude, int longitude) {
+        board.addCoin(latitude, longitude);
     }
 }

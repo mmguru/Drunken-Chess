@@ -3,7 +3,7 @@ public class Bishop extends Piece {
     Board board;
 
     public Bishop(Board board) {
-        super(board.startingPosition()[0], board.startingPosition()[1]);
+        super(board, board.startingPosition()[0], board.startingPosition()[1]);
     }
 
     @Override
@@ -12,19 +12,19 @@ public class Bishop extends Piece {
         switch(bits) {
             case "00":
                 move(1,-1);
-                board.addCoin(latitude, longitude);
+                dropCoin(latitude, longitude);
                 break;
             case "01":
                 move(1,1);
-                board.addCoin(latitude, longitude);
+                dropCoin(latitude, longitude);
                 break;
             case "10":
                 move(-1, -1);
-                board.addCoin(latitude, longitude);
+                dropCoin(latitude, longitude);
                 break;
             case "11":
                 move(-1,1);
-                board.addCoin(latitude, longitude);
+                dropCoin(latitude, longitude);
                 break;
         }
     }
