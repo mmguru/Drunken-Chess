@@ -12,8 +12,17 @@ public abstract class Piece {
 
     public abstract void bitToMove(String bits);
     public abstract int[][] possibleMoves();
-    public abstract int[][] getPosition();
-    public abstract void setPosition(int latitude, int longitude);
+
+    public void setPosition(int latitude, int longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public int[] getPostion() {
+        int[] position = {latitude, longitude};
+        return position;
+    }
+
     public String convertToBinaryString(String string) {
         String outString = "";
         for (int i = 0; i < string.length(); i++) {
