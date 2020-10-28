@@ -1,9 +1,8 @@
 public class Bishop extends Piece {
     int latitude, longitude;
-    Board board;
 
     public Bishop(Board board) {
-        super(board, board.startingPosition()[0], board.startingPosition()[1]);
+        super(board);
     }
 
     @Override
@@ -29,10 +28,7 @@ public class Bishop extends Piece {
         }
     }
 
-    public void move(int vertical, int horizontal) {
-        latitude += vertical;
-        latitude += horizontal;
-    }
+
 
     @Override
     public int[][] possibleMoves() {

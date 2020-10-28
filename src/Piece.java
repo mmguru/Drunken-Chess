@@ -3,10 +3,10 @@
 public abstract class Piece {
     private int latitude, longitude;
     Board board;
-    public Piece(Board board, int latitude, int longitude) {
+    public Piece(Board board) {
         this.board = board;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.latitude = board.startingPosition()[0];
+        this.longitude = board.startingPosition()[1];
     }
 
 
@@ -18,6 +18,7 @@ public abstract class Piece {
         String outString = "";
         for (int i = 0; i < string.length(); i++) {
             outString += Integer.toBinaryString((int) string.charAt(i));
+            System.out.println(outString);
         }
         return outString;
     }
@@ -33,5 +34,10 @@ public abstract class Piece {
 
     public void dropCoin(int latitude, int longitude) {
         board.addCoin(latitude, longitude);
+    }
+
+    public void move(int vertical, int horizontal) {
+        latitude += vertical;
+        latitude += horizontal;
     }
 }
