@@ -32,7 +32,7 @@ public abstract class Piece {
         return outString;
     }
 
-    // needs to be adjusted
+    
     public void moveSequence(String string) {
         String binaryString = convertToBinaryString(string);
         if (binaryString.length() %2 != 0) binaryString = "0" + binaryString;
